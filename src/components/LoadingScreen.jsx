@@ -1,0 +1,2 @@
+import { motion, AnimatePresence } from 'framer-motion'; import { useEffect,useState } from 'react';
+export default function LoadingScreen(){const [show,setShow]=useState(true);useEffect(()=>{const t=setTimeout(()=>setShow(false),1200);return()=>clearTimeout(t)},[]);return <AnimatePresence>{show&&<motion.div className="loader" exit={{opacity:0}} transition={{duration:.5}}><img src="/images/graham-sutherland-logo.png" alt=""/><p>AUTHOR · HISTORIAN · STORYTELLER</p><span/></motion.div>}</AnimatePresence>}
